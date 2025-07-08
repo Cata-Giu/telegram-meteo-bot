@@ -76,7 +76,7 @@ public class MeteoApp extends TelegramLongPollingBot {
         JsonArray results = geoJson.getAsJsonArray("results");
 
         if (results == null || results.size() == 0) {
-            return "Città non trovata.";
+            return "Città non trovata, scrivi meglio.";
         }
 
         JsonObject location = results.get(0).getAsJsonObject();
