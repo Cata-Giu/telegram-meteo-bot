@@ -11,13 +11,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <build>
         <plugins>
-            <!-- Compilatore -->
+            <!-- Compilatore Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -28,7 +26,7 @@
                 </configuration>
             </plugin>
 
-            <!-- JAR con Main-Class -->
+            <!-- Plugin JAR per includere il manifest con la Main-Class -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -36,14 +34,13 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.giulio.MeteoApp</mainClass>
+                            <mainClass>com.giulio.meteoapp.MeteoApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 
     <dependencies>
         <!-- Gson per parsing JSON -->
