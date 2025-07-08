@@ -16,6 +16,7 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <shadedArtifactAttached>false</shadedArtifactAttached>
               <transformers>
                 <transformer>
                   <mainClass>com.giulio.meteoapp.MeteoApp</mainClass>
