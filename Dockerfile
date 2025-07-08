@@ -7,5 +7,6 @@ RUN mvn clean package -DskipTests
 # Esegue l'app usando un'immagine JRE leggera
 FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY --from=build /app/target/meteo-app-1.0-SNAPSHOT.jar meteo-app.jar
-CMD ["java", "-jar", "meteo-app.jar"]
+COPY target/meteo-app-1.0-SNAPSHOT-shaded.jar app.jar
+CMD ["java", "-jar", "app.jar"]
+
