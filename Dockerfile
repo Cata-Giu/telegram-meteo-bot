@@ -10,4 +10,5 @@ WORKDIR /app
 # Copia il jar "shaded" (tutte le dipendenze incluse) generato nel build stage
 COPY --from=build /app/target/meteo-app-1.0-SNAPSHOT.jar app.jar
 # Comando di avvio dell'applicazione
+COPY .env /app/.env
 CMD ["java", "-jar", "app.jar"]
