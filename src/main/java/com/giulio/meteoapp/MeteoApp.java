@@ -11,6 +11,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 import java.io.IOException;
+import io.github.cdimascio.dotenv.Dotenv;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -20,6 +21,7 @@ import java.util.Locale;
 public class MeteoApp extends TelegramLongPollingBot {
 
     private static final HttpClient client = HttpClient.newHttpClient();
+    private static final Dotenv dotenv = Dotenv.load();
 
     @Override
     public String getBotUsername() {
@@ -28,7 +30,7 @@ public class MeteoApp extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "8160309659:AAGzyLy6jNL89pKkOXNiKh9Kpv-wcpXE_1I";
+        return dotenv.get("TELEGRAM_TOKEN");
     }
 
     @Override
